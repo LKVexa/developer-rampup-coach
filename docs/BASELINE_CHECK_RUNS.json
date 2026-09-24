@@ -1,0 +1,43 @@
+{
+ "build": "JY-S011-P001/0.1.1-partial/run-0001",
+ "environment": {
+  "executor": "claude cowork session 01SaQzDRzMFXvRabmCC6JDJD",
+  "python": "3.11.15",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "location": "Anthropic cloud container (Linux)"
+ },
+ "checks": [
+  {
+   "id": "baseline-unit-tests",
+   "command": "python3 -m unittest discover -s tests -t .",
+   "result": "PASS 13/13 (baseline 0.1.0-partial)",
+   "captured_at": "2026-09-14T18:50:21.970531+00:00"
+  },
+  {
+   "id": "audit-probes-baseline",
+   "command": "live probes (aliasing, error-contract)",
+   "result": "3 findings reproduced (A012-F1..F3)",
+   "captured_at": "2026-09-14T18:50:21.970531+00:00"
+  },
+  {
+   "id": "audit-probes-candidate",
+   "command": "same probes on candidate",
+   "result": "PASS — all findings fixed",
+   "captured_at": "2026-09-14T18:50:21.970531+00:00"
+  },
+  {
+   "id": "unit-tests",
+   "command": "python3 -m unittest discover -s tests -t .",
+   "result": "PASS 16/16 (candidate 0.1.1-partial, final bytes)",
+   "captured_at": "2026-09-14T18:50:21.970531+00:00"
+  }
+ ],
+ "unrun_checks": [
+  "Windows-native launch UNRUN — no Windows runtime this session",
+  "independent review NOT PERFORMED",
+  "PLAN-DEC decisions",
+  "GATE phase gates",
+  "MASTER-DOD/CLOSEOUT checks"
+ ],
+ "note": "Evidence current for these inputs on this host only."
+}
